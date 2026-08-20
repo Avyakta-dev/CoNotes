@@ -1,8 +1,21 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-mint: #C2F2F4;
+  --color-turquoise: #35C8B5;
+  --color-cream: #FFF7BF;
+  --color-lime: #A4CF4A;
+  --color-ink: #000000;
+}
+
 html, body, #root {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background-color: #030712; /* matches Tailwind's gray-950 */
+}
+
+body {
+  @apply bg-cream text-ink dark:bg-ink dark:text-cream transition-colors duration-200;
 }
