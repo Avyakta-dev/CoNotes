@@ -3,6 +3,7 @@ import { getToken } from './api';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import Editor from './pages/Editor.jsx';
 
 function RequireAuth({ children }) {
   return getToken() ? children : <Navigate to="/login" replace />;
@@ -25,7 +26,7 @@ export default function App() {
         path="/docs/:id"
         element={
           <RequireAuth>
-            <div className="text-white p-8">Editor coming next</div>
+             <Editor />
           </RequireAuth>
         }
       />
