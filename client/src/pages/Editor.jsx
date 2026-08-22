@@ -40,7 +40,7 @@ function hslToHex(h, s, l) {
   return `#${toHex(f(0))}${toHex(f(8))}${toHex(f(4))}`;
 }
 
-const WS_URL = `ws://${window.location.hostname}:4000`;
+const WS_URL = import.meta.env.VITE_WS_URL || `ws://${window.location.hostname}:4000`;
 
 export default function Editor() {
   const { id: docId } = useParams();

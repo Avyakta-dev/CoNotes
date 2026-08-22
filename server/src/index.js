@@ -20,6 +20,6 @@ const server = http.createServer(app);
 setupWS(server);
 
 const PORT = process.env.PORT || 4000;
-server.listen(PORT, () => {
-  console.log(`collabnotes server listening on http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`collabnotes server listening on port ${PORT}`);
 });
