@@ -32,9 +32,11 @@ A real-time collaborative note-taking app — think Google Docs, simplified. Mul
 
 ## Architecture
 
+
 ![CoNotes architecture](./architecture.png)
 
-```
+---
+
 
 - **Frontend:** React + Vite, [Tiptap](https://tiptap.dev/) (rich text editor built on ProseMirror), Tailwind CSS for styling, React Router for navigation
 - **Real-time sync:** [Yjs](https://docs.yjs.dev/) (CRDT library) + `y-websocket` (WebSocket transport + presence/awareness protocol)
