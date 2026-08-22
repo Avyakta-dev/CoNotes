@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,5 +23,8 @@
     "ws": "^8.21.3",
     "y-websocket": "1.5.4",
     "yjs": "^13.6.32"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
