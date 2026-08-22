@@ -32,8 +32,6 @@ A real-time collaborative note-taking app — think Google Docs, simplified. Mul
 
 ## Architecture
 
-## Architecture
-
 ![CoNotes architecture](./architecture.png)
 
 ```
