@@ -32,18 +32,10 @@ A real-time collaborative note-taking app — think Google Docs, simplified. Mul
 
 ## Architecture
 
-```
-                    ┌──────────────┐
-   Browser Tab A ───┤              │
-   (React + Tiptap) │  WebSocket   │
-                     │  (Yjs sync + ├──── SQLite
-   Browser Tab B ───┤   awareness) │     (documents,
-   (React + Tiptap) │              │      users,
-                     └──────┬───────┘      snapshots)
-                            │
-                     Express REST API
-                     (auth, doc metadata,
-                      sharing, permissions)
+## Architecture
+
+![CollabNotes architecture](./architecture.png)
+
 ```
 
 - **Frontend:** React + Vite, [Tiptap](https://tiptap.dev/) (rich text editor built on ProseMirror), Tailwind CSS for styling, React Router for navigation
