@@ -19,3 +19,29 @@ html, body, #root {
 body {
   @apply bg-cream text-ink dark:bg-ink dark:text-cream transition-colors duration-200;
 }
+
+.collaboration-cursor__caret {
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  word-break: normal;
+  pointer-events: none;
+}
+
+.collaboration-cursor__label {
+  position: absolute;
+  top: -1.4em;
+  left: -1px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  user-select: none;
+  white-space: nowrap;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px 4px 4px 0;
+  pointer-events: none;
+}

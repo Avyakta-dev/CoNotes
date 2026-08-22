@@ -10,9 +10,34 @@ import { api, getToken, getUser } from '../api';
 import PresenceBar from '../components/PresenceBar.jsx';
 import VersionHistory from '../components/VersionHistory.jsx';
 
-const CURSOR_COLORS = ['#35C8B5', '#A4CF4A', '#000000', '#C2F2F4', '#FFF7BF'];
+const EXCLUDED_COLORS = ['#C2F2F4', '#35C8B5', '#FFF7BF', '#A4CF4A', '#000000', '#FFFFFF'];
+
+function colorDistance(hexA, hexB) {
+  const a = parseInt(hexA.slice(1), 16);
+  const b = parseInt(hexB.slice(1), 16);
+  const ar = (a >> 16) & 255, ag = (a >> 8) & 255, ab = a & 255;
+  const br = (b >> 16) & 255, bg = (b >> 8) & 255, bb = b & 255;
+  return Math.sqrt((ar - br) ** 2 + (ag - bg) ** 2 + (ab - bb) ** 2);
+}
+
 function randomColor() {
-  return CURSOR_COLORS[Math.floor(Math.random() * CURSOR_COLORS.length)];
+
+  let hex;
+  do {
+    const hue = Math.floor(Math.random() * 360);
+    hex = hslToHex(hue, 70, 55);
+  } while (EXCLUDED_COLORS.some((c) => colorDistance(hex, c) < 60));
+  return hex;
+}
+
+function hslToHex(h, s, l) {
+  s /= 100;
+  l /= 100;
+  const k = (n) => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+  const toHex = (x) => Math.round(255 * x).toString(16).padStart(2, '0');
+  return `#${toHex(f(0))}${toHex(f(8))}${toHex(f(4))}`;
 }
 
 const WS_URL = `ws://${window.location.hostname}:4000`;
