@@ -11,7 +11,7 @@ A real-time collaborative note-taking app — think Google Docs, simplified. Mul
 
 ## Demo
 
-![CoNotes demo](./demo.gif)
+https://github.com/user-attachments/assets/5d48575b-3452-46a6-b6d0-2a946775c1bf
 
 *(demo — two browser windows side by side, typing simultaneously, showing live cursors and presence)*
 
